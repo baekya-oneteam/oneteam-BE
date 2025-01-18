@@ -7,11 +7,14 @@ import lombok.Builder;
 
 @Builder
 public record CreateFeedbackResDto(
-        String comment
-) {
+        String goodFeedback,
+        String badFeedback,
+        String hopeFeedback) {
     public static CreateFeedbackResDto from(Feedback feedback) {
         return CreateFeedbackResDto.builder()
-                .comment(feedback.getContent())
+                .goodFeedback(feedback.getGoodFeedback())
+                .badFeedback(feedback.getBadFeedback())
+                .hopeFeedback(feedback.getHopeFeedback())
                 .build();
     }
 }

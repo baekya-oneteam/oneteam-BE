@@ -13,15 +13,19 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class Feedback extends BaseEntity {
-    private String content;
+    private String goodFeedback;
+    private String badFeedback;
+    private String hopeFeedback;
 
     @ManyToOne
     @JoinColumn(name = "member")
     private Member member;
 
     @Builder
-    public Feedback(String content, Member member) {
-        this.content = content;
+    public Feedback(String goodFeedback, String badFeedback, String hopeFeedback, Member member) {
+        this.goodFeedback = goodFeedback;
+        this.badFeedback = badFeedback;
+        this.hopeFeedback = hopeFeedback;
         this.member = member;
     }
 }

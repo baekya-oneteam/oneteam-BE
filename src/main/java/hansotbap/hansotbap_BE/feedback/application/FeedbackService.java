@@ -25,7 +25,9 @@ public class FeedbackService {
                 .orElseThrow(MemberNotFoundException::new);
 
         Feedback feedback = Feedback.builder()
-                .content(createFeedbackReqDto.comment())
+                .goodFeedback(createFeedbackReqDto.goodFeedback())
+                .badFeedback(createFeedbackReqDto.badFeedback())
+                .hopeFeedback(createFeedbackReqDto.hopeFeedback())
                 .member(member)
                 .build();
 
